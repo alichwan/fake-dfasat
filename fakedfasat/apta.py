@@ -1,5 +1,4 @@
-import itertools
-from typing import Dict, List
+from typing import Dict, List, Tuple
 
 
 class APTA:
@@ -63,3 +62,31 @@ class APTA:
         """
         print(trace)  # process trace TODO
         return "pos"
+
+    def parent(self, node: int) -> int:
+        """Get the parent of the node
+
+        Args:
+            node (int): input node
+        """
+        return self.parent_label(node)[0]
+
+    def label(self, node: int) -> str:
+        """Get the needed label to reach the input node from their parent
+
+        Args:
+            node (int): input node
+
+        Returns:
+            str: label
+        """
+        return self.parent_label(node)[1]
+
+    def parent_label(self, node: int) -> Tuple[int, str]:
+        """Get the parent of he input node and the label needed to reach it
+
+        Args:
+            node (int): input node
+        """
+        reversed_transitions = {v: k for k, v in self.transitions.items()}
+        return reversed_transitions[node]
