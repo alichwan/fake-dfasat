@@ -1,4 +1,8 @@
 # IDE and environment
 .vscode
+.vscode/
 __pycache__/
 venv/
+
+# sandbox
+sandbox/
