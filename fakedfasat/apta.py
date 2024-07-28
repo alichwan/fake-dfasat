@@ -14,7 +14,7 @@ class APTA:
             traces (Dict[str, List[str]]): Set of example labeled traces.
         """
         self.traces = traces
-        self.vocabulary = set(
+        self.alphabet = set(
             [
                 letter
                 for sgn in ["pos", "neg"]
@@ -30,9 +30,9 @@ class APTA:
         self.accepting_nodes = set()
         self.rejecting_nodes = set()
 
-        self.generate()
+        self._generate()
 
-    def generate(self):
+    def _generate(self):
         """Compute the actual tree based in the structure of this and the given traces"""
         for sgn in ["pos", "neg"]:
             for trace in self.traces[sgn]:
@@ -49,10 +49,6 @@ class APTA:
                     self.accepting_nodes.add(current_node)
                 else:
                     self.rejecting_nodes.add(current_node)
-
-    def to_sat(self):
-        """Encode the APTA as a SAT problem to be solved"""
-        return 1  # not sure how TODO
 
     def label_trace(self, trace):
         """Return the label of a trace
@@ -89,4 +85,8 @@ class APTA:
             node (int): input node
         """
         reversed_transitions = {v: k for k, v in self.transitions.items()}
-        return reversed_transitions[node]
+        return reversed_transitions.get(node, (None, None))
+
+
+if __name__ == "__main__":
+    pass
