@@ -1,7 +1,7 @@
 import json
 from typing import Dict, List
 
-from fakedfasat.fakedfasat import fakedfasat
+from src.fakedfasat_Alichwan.fakedfasat import fakedfasat
 
 examples = [
     {"name": "./test/data/50S_5L_0C_20T_5X.json", "min_states": 5},

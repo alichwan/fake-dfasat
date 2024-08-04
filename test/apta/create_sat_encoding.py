@@ -1,5 +1,5 @@
-from fakedfasat.apta import APTA
-from fakedfasat.sat_encoding import SATEncoding
+from src.fakedfasat_Alichwan.apta import APTA
+from src.fakedfasat_Alichwan.sat_encoding import SATEncoding
 
 # example provided by Heule & Verwer (2013)
 ex_sample = {

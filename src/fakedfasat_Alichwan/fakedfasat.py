@@ -1,8 +1,8 @@
 from typing import Dict, List
 
-from fakedfasat.apta import APTA
-from fakedfasat.dfa import DFA
-from fakedfasat.sat_encoding import SATEncoding
+from src.fakedfasat_Alichwan.apta import APTA
+from src.fakedfasat_Alichwan.dfa import DFA
+from src.fakedfasat_Alichwan.sat_encoding import SATEncoding
 
 
 def fakedfasat(

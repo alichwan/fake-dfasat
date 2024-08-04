@@ -3,8 +3,8 @@ from typing import Iterable, List
 from pysat.formula import CNF
 from pysat.solvers import Solver
 
-from fakedfasat.apta import APTA
-from fakedfasat.dfa import DFA
+from src.fakedfasat_Alichwan.apta import APTA
+from src.fakedfasat_Alichwan.dfa import DFA
 
 
 def x(v, i):
