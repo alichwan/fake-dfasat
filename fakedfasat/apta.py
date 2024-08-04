@@ -56,8 +56,12 @@ class APTA:
         Args:
             trace (list): Given trace to be processed
         """
-        print(trace)  # process trace TODO
-        return "pos"
+        curr_node = self.root
+        for sym in trace:
+            # Goes to next node, if symbol doesn't exist stay in current node
+            curr_node = self.transitions.get((curr_node, sym), curr_node)
+        # when reach the final
+        return curr_node in self.accepting_nodes
 
     def parent(self, node: int) -> int:
         """Get the parent of the node
