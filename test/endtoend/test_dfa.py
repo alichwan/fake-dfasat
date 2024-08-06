@@ -1,7 +1,7 @@
 import json
 from typing import Dict, List
 
-from src.fakedfasat_Alichwan.fakedfasat import fakedfasat
+from src.fakedfasat.fakedfasat import fakedfasat
 
 examples = [
     {"name": "./test/data/50S_5L_0C_20T_5X.json", "min_states": 5},
@@ -61,7 +61,7 @@ for example in examples:
     # example provided by Heule & Verwer (2013)
     ex_sample = get_traces_from_json(example["name"])
     ex_sample = adapt_traces(ex_sample)
-    automaton = fakedfasat(ex_sample, lower_boud=2, upper_boud=6)
+    automaton = fakedfasat(ex_sample, lower_bound=2, upper_bound=6)
 
     if automaton is not None:
         assert len(automaton.states) == example["min_states"]

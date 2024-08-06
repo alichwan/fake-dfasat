@@ -1,4 +1,4 @@
-from src.fakedfasat_Alichwan.apta import APTA
+from src.fakedfasat.apta import APTA
 
 # example provided by Heule & Verwer (2013)
 ex_sample = {
