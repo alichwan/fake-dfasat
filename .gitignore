@@ -8,6 +8,7 @@ venv/
 sandbox/
 
 # Distribution / packaging
+.pypirc
 .Python
 build/
 develop-eggs/
